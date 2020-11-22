@@ -2,15 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int strNum(char* str) {
-    int i, x = 0;
-    for (i = 0; i < strlen(str); i++) {
-        if (str[i] >= '0' && str[i] <= '9')
-            x++;
-    }
-    if (x == strlen(str)) return 1;
-    else return 0;
-}
+int strNum(char*);
+
 int main() {
     char num[100];
     int a = 0, k = 2, i;
@@ -37,4 +30,14 @@ int main() {
     }
     else printf("!! ERROR !!");
     return 0;
+}
+
+int strNum(char* str) {
+    int i, x = 0;
+    for (i = 0; i < strlen(str); i++) {
+        if (str[i] >= '0' && str[i] <= '9')
+            x++;
+    }
+    if (x == strlen(str)) return 1;
+    else return 0;
 }
