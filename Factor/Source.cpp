@@ -5,22 +5,23 @@
 int strNum(char* str) {
     int i, x = 0;
     for (i = 0; i < strlen(str); i++) {
-        if (str[i] >= '0' && str[i] <= '9')x++;
+        if (str[i] >= '0' && str[i] <= '9')
+            x++;
     }
-    if (x == strlen(str))return 1;
+    if (x == strlen(str)) return 1;
     else return 0;
 }
 int main() {
     char num[100];
     int a = 0, k = 2, i;
     int* prt = &a;
-    printf("Enter number : ");
+    printf("Input number : ");
     scanf("%s", num);
     if (strNum(num) == 1) {
         for (i = 0; i < strlen(num); i++) {
             (*prt) = (num[i] - '0') + (*prt) * 10;
         }
-        if ((*prt) < 2)printf("The number of input is less than 1");
+        if ((*prt) < 2) printf("The number is less than 1");
         else {
             printf("Factor is : ");
             while ((*prt) != 1) {
@@ -34,6 +35,6 @@ int main() {
             }
         }
     }
-    else printf("ERROR !!");
+    else printf("!! ERROR !!");
     return 0;
 }
